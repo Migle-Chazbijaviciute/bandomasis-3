@@ -5,8 +5,22 @@ class CarCardComponent {
     this.init();
   }
 
+
+  convert = (amount, currency) => {
+    const usd_eur = 0.86;
+    let newPrice;
+    if (currency === '$') {
+      newPrice = Math.round(amount * usd_eur) + `€`
+      return newPrice
+      // console.log(newPrice);
+    } else {
+      return amount + `€`;
+    }
+  }
+
   createdCard = () => {
     const { brand, model, year, fuelTypes, price: { amount, currency }, imgSrc } = this.props.data;
+
     const element = document.createElement('div');
     element.innerHTML = `
     <div class="border shadow">
@@ -19,7 +33,7 @@ class CarCardComponent {
     <ul class="list-group">
     <li class="list-group-item"><b>Year:</b> ${year}</li>
     <li class="list-group-item"><b>Fuel Type:</b> ${fuelTypes}</li>
-      <li class="list-group-item"><b>Price:</b> ${amount} ${currency}</li>
+    <li class="list-group-item"><b>Price:</b> ${this.convert(amount, currency)}</li>
     </ul>
 </div>
   </div>`
