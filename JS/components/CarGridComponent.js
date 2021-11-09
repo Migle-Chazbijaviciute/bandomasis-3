@@ -20,6 +20,22 @@ class CarGridComponents {
     );
   }
 
+  deleteCar = (id) => {
+    this.state.loading = true;
+    this.render();
+    API.deleteCar(() =>
+      API.fetchCars(
+        (cars) => {
+          this.state.cars = cars;
+          this.state.loading = false;
+          this.render();
+        },
+        (err) => console.log(err)),
+      (err) => console.log(err),
+      id
+    );
+  }
+
   init = () => {
     this.fetchCars();
     this.htmlElement = document.createElement('div');
@@ -38,6 +54,7 @@ class CarGridComponents {
       this.state.cars.forEach(cars => {
         const newCar = new CarCardComponent({
           data: cars,
+          onDelete: this.deleteCar
         })
         this.htmlElement.appendChild(newCar.htmlElement);
       })

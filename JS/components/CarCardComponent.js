@@ -1,5 +1,7 @@
 
 class CarCardComponent {
+  static usd_eur = 0.86;
+
   constructor(props) {
     this.props = props;
     this.init();
@@ -7,10 +9,9 @@ class CarCardComponent {
 
 
   convert = (amount, currency) => {
-    const usd_eur = 0.86;
     let newPrice;
     if (currency === '$') {
-      newPrice = Math.round(amount * usd_eur) + `€`
+      newPrice = Math.round(amount * CarCardComponent.usd_eur) + `€`
       return newPrice
       // console.log(newPrice);
     } else {
@@ -19,7 +20,7 @@ class CarCardComponent {
   }
 
   createdCard = () => {
-    const { brand, model, year, fuelTypes, price: { amount, currency }, imgSrc } = this.props.data;
+    const { id, brand, model, year, fuelTypes, price: { amount, currency }, imgSrc } = this.props.data;
 
     const element = document.createElement('div');
     element.innerHTML = `
@@ -35,8 +36,11 @@ class CarCardComponent {
     <li class="list-group-item"><b>Fuel Type:</b> ${fuelTypes}</li>
     <li class="list-group-item"><b>Price:</b> ${this.convert(amount, currency)}</li>
     </ul>
-</div>
-  </div>`
+    </div>
+    </div>`
+
+    const deleteBtn = element.querySelector('.delete');
+    deleteBtn.addEventListener('click', () => this.props.onDelete(id));
 
     return element;
   }
