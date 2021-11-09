@@ -8,7 +8,20 @@ class CarGridComponents {
     this.init();
   }
 
+  fetchCars = () => {
+    this.state.loading = true;
+    API.fetchCars(
+      (cars) => {
+        this.state.cars = cars;
+        this.state.loading = false;
+        this.render();
+      },
+      (err) => console.log(err)
+    );
+  }
+
   init = () => {
+    this.fetchCars();
     this.htmlElement = document.createElement('div');
     this.render();
   }
