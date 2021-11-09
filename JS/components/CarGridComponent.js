@@ -29,9 +29,18 @@ class CarGridComponents {
   render = () => {
     const { loading } = this.state;
     if (loading) {
-      this.htmlElement.innerHTML = 'Loading';
+      this.htmlElement.className = ''
+      this.htmlElement.innerHTML = `<div class="d-flex justify-content-center align-items-center"><img src="JS/assets/loading.gif"></div>
+      `;
     } else {
-      this.htmlElement.innerHTML = 'Successfully loaded data!';
+      this.htmlElement.className = "row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center"
+      this.htmlElement.innerHTML = '';
+      this.state.cars.forEach(cars => {
+        const newCar = new CarCardComponent({
+          data: cars,
+        })
+        this.htmlElement.appendChild(newCar.htmlElement);
+      })
     }
   }
 
