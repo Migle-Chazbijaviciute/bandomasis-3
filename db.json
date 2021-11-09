@@ -1,0 +1,88 @@
+{
+  "cars": [
+    {
+      "id": "1",
+      "brand": "Volkswagen",
+      "model": "T-Cross",
+      "year": "2021",
+      "fuelTypes": "petrol",
+      "price": {
+        "amount": 24283,
+        "currency": "€"
+      },
+      "imgSrc": "https://autoplius-img.dgn.lt/ann_3_195541411/volkswagen-t-cross-0-1-l-visureigis-2021-benzinas-0.jpg"
+    },
+    {
+      "id": "2",
+      "brand": "Kia",
+      "model": "Sportage",
+      "year": "2019",
+      "fuelTypes": "gas",
+      "price": {
+        "amount": 23000,
+        "currency": "$"
+      },
+      "imgSrc": "https://autoplius-img.dgn.lt/ann_3_196133699/kia-sportage-1-6-l-visureigis-2021-benzinas-0.jpg"
+    },
+    {
+      "id": "3",
+      "brand": "Kia",
+      "model": "Stonic",
+      "year": "2020",
+      "fuelTypes": "dysel",
+      "price": {
+        "amount": 15000,
+        "currency": "$"
+      },
+      "imgSrc": "https://autoplius-img.dgn.lt/ann_3_161286573/kia-stonic-1-2-l-hecbekas-2021-benzinas-0.jpg"
+    },
+    {
+      "id": "4",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "year": "2018",
+      "fuelTypes": "hybrid",
+      "price": {
+        "amount": 25400,
+        "currency": "€"
+      },
+      "imgSrc": "https://autoplius-img.dgn.lt/ann_3_193488803/toyota-corolla-1-8-l-hecbekas-2021-benzinas-elektra-0.jpg"
+    },
+    {
+      "id": "5",
+      "brand": "Volkswagen",
+      "model": "Arteon",
+      "year": "2021",
+      "fuelTypes": "petrol",
+      "price": {
+        "amount": 47000,
+        "currency": "$"
+      },
+      "imgSrc": "https://autoplius-img.dgn.lt/ann_3_172645509/volkswagen-arteon-2-0-l-hecbekas-2021-benzinas-0.jpg"
+    },
+    {
+      "id": "6",
+      "brand": "Tesla",
+      "model": "Model 3",
+      "year": "2021",
+      "fuelTypes": "electric",
+      "price": {
+        "amount": 51000,
+        "currency": "€"
+      },
+      "imgSrc": "https://autoplius-img.dgn.lt/ann_3_192572923/tesla-model-3-54-kwh-hecbekas-2021-elektra-0.jpg"
+    },
+    {
+      "id": "7",
+      "brand": "Bandomoji",
+      "model": "masina",
+      "year": "1999",
+      "fuelTypes": "dysel",
+      "price": {
+        "amount": 150,
+        "currency": "$"
+      },
+      "imgSrc": "https://autoplius-img.dgn.lt/ann_3_189488875/fiat-500-42-kwh-hecbekas-2021-elektra-0.jpg"
+    }
+  ]
+}
